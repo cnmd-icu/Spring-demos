@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: doc
+server:
+  port: 9001
+
+# swagger3???
+# http://localhost:9001/swagger-ui/index.html
+springdoc:
+  api-docs:
+    enabled: true #
+    path: /v3/api-docs # ??/v3/api-docs
+  swagger-ui:
+    path: /swagger-ui.html
+  group-configs: #?????????????????????????
+    - group: 'user'
+      paths-to-match: '/api/users/**'
+      packages-to-scan: com.example.doc
+#    - group: 'test'
+#      paths-to-match: '/api/test/**'
+#      packages-to-scan: com.example.doc.test
+
+# knife4j???????????????
+# ?????https://doc.xiaominfo.com/docs/quick-start
+# ????????http://localhost:9001/doc.html
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
